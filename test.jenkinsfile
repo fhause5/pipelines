@@ -9,8 +9,6 @@ pipeline {
 //    }
 
     stages {
-
-        stage('Determine Agent') {
         stage('STAGE 1') {
             steps {
                 node(EXECUTOR_AGENT) {
@@ -21,5 +19,4 @@ pipeline {
                 }
             }
         }
-    }
 }
