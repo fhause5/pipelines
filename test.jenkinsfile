@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        node {
+            label 'master' // Execute the Pipeline on an agent available in the Jenkins environment with the provided label
+        }
+    }
+//    parameters {
+//        choice(choices: "prod\nany", description: '', name: 'ENVIRONMENT')
+//    }
+
+    stages {
+
+        stage('Determine Agent') {
+        stage('STAGE 1') {
+            steps {
+                node(EXECUTOR_AGENT) {
+                    script {
+                        sh 'echo 111'
+                        sh 'echo 222'
+                    }
+                }
+            }
+        }
+    }
+}
