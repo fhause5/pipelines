@@ -27,6 +27,7 @@ pipeline {
             steps {
                 node("master") {
                     script {
+                        loadProperties()
                         sh 'echo 1'
                         sh 'echo 2'
                         println(deploy_conf)
