@@ -3,7 +3,7 @@
 def cluster_map = cluster_map_main()
 deploy_conf = cluster_map
 
-p
+
 def prop(path) {
     return readProperties([file: path])
 }
