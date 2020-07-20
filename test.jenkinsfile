@@ -1,8 +1,8 @@
 @Library('github.com/fhause5/groovy') _
 import devops.jenkins.*;
 
-def cluster_map = cluster_map_main()
-deploy_conf = cluster_map()
+//def cluster_map = cluster_map_main()
+//deploy_conf = cluster_map()
 
 cluser = clusters()
 
@@ -41,7 +41,6 @@ pipeline {
             steps {
                 node("master") {
                     script {
-                        loadProperties()
                         sh 'echo 1'
                         sh 'echo 2'
                         println(deploy_conf)
