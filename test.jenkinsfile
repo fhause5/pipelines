@@ -14,7 +14,7 @@ def loadProperties() {
             properties.load(propertiesFile)
     }
 }
-
+loadProperties()
 
 pipeline {
     agent any
