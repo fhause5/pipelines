@@ -1,5 +1,4 @@
 @Library('github.com/fhause5/groovy') _
-package devops.jenkins
 cluster_map
 pipeline {
     agent any
