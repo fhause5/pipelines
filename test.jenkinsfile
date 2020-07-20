@@ -4,17 +4,29 @@ def cluster_map = cluster_map_main()
 deploy_conf = cluster_map
 
 
-properties = null
+properties([
+    parameters([
+        gitParameter(
+            branch: '',
+            branchFilter: 'origin/(.*)',
+            defaultValue: 'master',
+            description: 'Choose branch to deploy',
+            name: 'BRANCH',
+            quickFilterEnabled: true,
+            selectedValue: 'DEFAULT',
+            sortMode: 'NONE',
+            tagFilter: '*',
+            type: 'PT_BRANCH',
+            useRepository: "fdfddf"
+        ),
+        choice(
+            choices: clusters,
+            description: 'Select cluster',
+            name: 'AWS_CLUSTER'
+        )
+    ])
+])
 
-@NonCPS
-def loadProperties() {
-    checkout scm
-    File propertiesFile = new File('${workspace}/properties')
-    propertiesFile.withInputStream {
-            properties.load(propertiesFile)
-    }
-}
-loadProperties()
 
 pipeline {
     agent any
