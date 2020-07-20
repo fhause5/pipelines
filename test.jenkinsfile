@@ -1,8 +1,10 @@
 @Library('github.com/fhause5/groovy') _
+import devops.jenkins.*;
 
 def cluster_map = cluster_map_main()
-deploy_conf = cluster_map
+deploy_conf = cluster_map()
 
+cluser = clusters()
 
 properties([
     parameters([
@@ -20,7 +22,7 @@ properties([
             useRepository: "fdfddf"
         ),
         choice(
-            choices: clusters,
+            choices: cluser,
             description: 'Select cluster',
             name: 'AWS_CLUSTER'
         )
