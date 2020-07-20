@@ -6,7 +6,6 @@ pipeline {
 //    parameters {
 //        choice(choices: "prod\nany", description: '', name: 'ENVIRONMENT')
 //    }
-    param()
     stages {
         stage('STAGE 1') {
             steps {
