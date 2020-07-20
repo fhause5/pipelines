@@ -1,0 +1,32 @@
+properties([
+    parameters([
+        gitParameter(
+            branch: '',
+            branchFilter: 'origin/(.*)',
+            defaultValue: 'master',
+            description: 'Choose branch to deploy',
+            name: 'BRANCH',
+            quickFilterEnabled: true,
+            selectedValue: 'DEFAULT',
+            sortMode: 'NONE',
+            tagFilter: '*',
+            type: 'PT_BRANCH',
+            useRepository: git_url
+        ),
+        choice(
+            choices: [
+                '841551630458/grp8',
+                '841551630458/boat',
+                '841551630458/airplane',
+                '841551630458/real1',
+                '841551630458/tradeconnect1',
+                '123118670486/uat2',
+                '123118670486/real1',
+                '123118670486/livece',
+                '123118670486/democe'
+            ],
+            description: 'Select cluster',
+            name: 'AWS_CLUSTER'
+        )
+    ])
+])
