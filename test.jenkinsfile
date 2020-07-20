@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('STAGE 1') {
             steps {
-                node(EXECUTOR_AGENT) {
+                node('master') {
                     script {
                         sh 'echo 111'
                         sh 'echo 222'
