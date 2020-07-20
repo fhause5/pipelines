@@ -13,7 +13,7 @@ pipeline {
                     script {
                         sh 'echo 1'
                         sh 'echo 2'
-                        test = cluster_map()
+                        def test = cluster_map()
                         println(test)
                     }
                 }
