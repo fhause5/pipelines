@@ -3,7 +3,7 @@
 def cluster_map = cluster_map_main()
 deploy_conf = cluster_map
 
-def prop = readProperties interpolate: true, file:: 'properties';
+def prop = readProperties interpolate: true, file: 'properties';
 
 pipeline {
     agent any
