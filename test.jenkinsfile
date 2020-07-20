@@ -3,7 +3,12 @@
 def cluster_map = cluster_map_main()
 deploy_conf = cluster_map
 
-def prop = readProperties interpolate: true, file: '/var/lib/jenkins/workspace/properties';
+p
+def prop(path) {
+    return readProperties([file: path])
+}
+
+prop("/var/lib/jenkins/workspace/properties")
 
 pipeline {
     agent any
