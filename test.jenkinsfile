@@ -1,5 +1,5 @@
 @Library('github.com/fhause5/groovy') _
-test = cluster_map()
+
 pipeline {
     agent any
 
@@ -13,6 +13,7 @@ pipeline {
                     script {
                         sh 'echo 1'
                         sh 'echo 2'
+                        test = cluster_map()
                         println(test)
                     }
                 }
