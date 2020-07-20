@@ -4,11 +4,17 @@ def cluster_map = cluster_map_main()
 deploy_conf = cluster_map
 
 
-def prop(path) {
-    return readProperties([file: path])
+properties = null
+
+@NonCPS
+def loadProperties() {
+    checkout scm
+    File propertiesFile = new File('${workspace}/properties')
+    propertiesFile.withInputStream {
+            properties.load(propertiesFile)
+    }
 }
 
-prop("/var/lib/jenkins/workspace/properties")
 
 pipeline {
     agent any
